@@ -39,7 +39,8 @@ export class EmotionService {
 
 
   analyzeText(text: string): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}/analyze`, { text })
+    console.log(text)
+    return this.http.post<any>(`http://127.0.0.1:5000/analyze`, { text })
       .pipe(
         catchError(error => {
           console.error('API Error:', error);

@@ -39,7 +39,7 @@ export class InputFormComponent {
 
   onSubmit() {
     console.log('User input:', this.userInput); // Debugging line
-    this.emotionService.analyzeEmotion(this.userInput);
+    this.emotionService.analyzeText(this.userInput).subscribe((value => console.log(value)));
 
   }
 }
