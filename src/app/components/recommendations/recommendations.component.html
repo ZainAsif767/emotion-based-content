@@ -1,0 +1,9 @@
+<div *ngIf="recommendations.length > 0">
+  <h2>Recommended Content</h2>
+  <ul>
+    <li *ngFor="let recommendation of recommendations">{{ recommendation }}</li>
+  </ul>
+</div>
+<div *ngIf="recommendations.length === 0">
+  <p>No recommendations available.</p>
+</div>

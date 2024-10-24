@@ -1,0 +1,43 @@
+<form
+  (ngSubmit)="onSubmit()"
+  class="max-w-lg mx-auto p-6 bg-gradient-to-r from-blue-100 to-blue-200 shadow-lg rounded-lg"
+>
+  <div class="mb-4">
+    <label for="userInput" class="block text-gray-800 text-sm font-bold mb-2"
+      >Your Thoughts:</label
+    >
+    <textarea
+      id="userInput"
+      class="shadow appearance-none border border-blue-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline"
+      placeholder="Type your thoughts here..."
+      [(ngModel)]="userInput"
+      name="userInput"
+    ></textarea>
+  </div>
+  <div class="flex items-center justify-between">
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
+<div
+  *ngIf="recommendations.length > 0"
+  class="max-w-lg mx-auto mt-8 p-6 bg-gradient-to-r from-green-100 to-green-200 shadow-lg rounded-lg"
+>
+  <h2 class="text-xl font-bold mb-4 text-gray-800">Recommended Content</h2>
+  <ul class="list-disc list-inside">
+    <li *ngFor="let recommendation of recommendations" class="text-gray-700">
+      {{ recommendation }}
+    </li>
+  </ul>
+</div>
+<div
+  *ngIf="recommendations.length === 0"
+  class="max-w-lg mx-auto mt-8 p-6 bg-gradient-to-r from-red-100 to-red-200 shadow-lg rounded-lg"
+>
+  <p class="text-gray-700">No recommendations available.</p>
+</div>
